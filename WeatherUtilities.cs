@@ -26,7 +26,7 @@ namespace MyUtilities
         {
             var farahenheit = CelciusToFaharenheit(temperatureCelcius) ;
             var celcius = FaharenheitToCelcius(temperatureFaharenheit);
-            Console.WriteLine($" is: {location},{ farahenheit}, {celcius}");
+            Console.WriteLine($" Wether Info: {location},{ farahenheit}, {celcius}");
         }
     }
 }
