@@ -1,22 +1,23 @@
-﻿// See https://aka.ms/new-console-template for more information
-using CloudCheck;
-using MyUtilities;
+﻿using Coffee.StorageApp.Entities;
+using Coffee.StorageApp.Repositories;
 using System;
-namespace myFirstProgram
-{ class Program
-    {   static void Main(string[] args)
+namespace Coffee.StorageApp
+{
+    class Program
+    {
+        static void Main(string[] args)
         {
-            WeatherUtilities.Report("Patna ", 45, 56);
-            WeatherCheck.Raining("cloudy");
-            //float celcius=Program.FaharenheitToCelcius(132.5f);
-            //Console.WriteLine(celcius);
-            //Console.WriteLine("Hello, World!");
+           var employeeRepository = new GenericRepository<Employee>();
+            employeeRepository.Add(new Employee { FirstName = "Akanksha" });
+            employeeRepository.Add(new Employee { FirstName = "Astha" });
+            employeeRepository.Add(new Employee { FirstName = "Akastha" });
+            employeeRepository.save();
+            var organizationRepository = new GenericRepository<Organization>();
+            organizationRepository.Add(new Organization { Name = "PluralSight" });
+            organizationRepository.Add(new Organization { Name = "W3School" });
+            organizationRepository.Add(new Organization { Name = "TutorialPoint" });
+            organizationRepository.save();
+            Console.ReadLine();
         }
-
-       
-        //bool weather = isRaining("cloudy");
-        //Console.WriteLine("Weather is"+ weather);
-
-       
     }
 }
